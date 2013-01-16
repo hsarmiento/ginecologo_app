@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @clinic.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @clinic.address %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @clinic.phone %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @clinic.city %>
+</p>
+
+
+<%= link_to 'Edit', edit_clinic_path(@clinic) %> |
+<%= link_to 'Back', clinics_path %>
