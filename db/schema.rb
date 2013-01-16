@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130116192335) do
+ActiveRecord::Schema.define(:version => 20130116194052) do
 
   create_table "clinics", :force => true do |t|
     t.string   "name"
@@ -20,6 +20,44 @@ ActiveRecord::Schema.define(:version => 20130116192335) do
     t.string   "city"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "doctors", :force => true do |t|
+    t.integer  "clinic_id"
+    t.string   "name"
+    t.string   "last_name"
+    t.string   "speciality"
+    t.string   "phone"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "patients", :force => true do |t|
+    t.string   "name"
+    t.string   "last_name"
+    t.date     "date_of_birth"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "reserves", :force => true do |t|
+    t.integer  "doctor_id"
+    t.integer  "patient_id"
+    t.datetime "datetime"
+    t.boolean  "available"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "schedules", :force => true do |t|
+    t.integer  "doctor_id"
+    t.string   "day"
+    t.time     "start_hour"
+    t.time     "finish_hour"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end
