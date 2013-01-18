@@ -1,19 +1,17 @@
 <%= provide(:title, 'Bienvenido a Conchalink') %>
-		<div class="center hero-unit">
-			<h1>Bienvenido a Conchalink</h1>
-			<h2>Encuentra al instante tu Ginecólogo con 1 solo click!</h2>	
-			<div class="row">
-				<% @clinics.each do |clinic| %>
-				<div class="span4 offset1">
-					<%= link_to(image_tag("ginecologo.gif", class: "img-rounded", size: "250x250"),clinic)%>
-					<address>
-						<%= link_to clinic.name, clinic%> </br>
-						<%=clinic.address%>
-					</address>
-				</div>
-				<% end%>	
-
-
-			</div>	
-		</div>
+<div class="center hero-unit">
+	<h1>Bienvenido a Conchalink</h1>
+	<h2>Encuentra al instante tu Ginecólogo con 1 solo click!</h2>	
+	<div class="row">
+		<% @clinics.each do |clinic| %>
+			<div class="span4 offset1">
+				<%= link_to(image_tag("ginecologo.gif", class: "img-rounded", size: "250x250"),clinic)%>
+				<address>
+					<%= link_to clinic.name, clinic%> </br>
+					<%=clinic.address%>
+				</address>
+			</div>
+		<% end%>	
+	</div>	
+</div>
 
