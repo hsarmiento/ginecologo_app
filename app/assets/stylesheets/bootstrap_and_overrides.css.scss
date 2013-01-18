@@ -54,3 +54,15 @@ h2 {
   font-weight: normal;
   color: $grayLight;
 }
+
+
+.span4{
+  address{
+    text-align: center;
+  }
+  .img-rounded{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
