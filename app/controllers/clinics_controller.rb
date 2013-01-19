@@ -14,11 +14,7 @@ class ClinicsController < ApplicationController
   # GET /clinics/1.json
   def show
     @clinic = Clinic.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @clinic }
-    end
+    @doctors = @clinic.doctors
   end
 
   # GET /clinics/new

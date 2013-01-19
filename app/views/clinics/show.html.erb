@@ -1,25 +1,40 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, @clinic.name) %>
 
-<p>
-  <b>Name:</b>
-  <%= @clinic.name %>
-</p>
+<div class="center hero-unit">
+	<div class="row row-clinic">
+		<div class="span4">
+			<%= image_tag("ginecologo.gif", class: "img-rounded", size: "250x250") %>
+		</div>
+		<div class="span4">
+			<h3><%= @clinic.name %></h3>
+			<h5><%= @clinic.address+', '+@clinic.city %></h5><br/>
+			<strong>Especialidad</strong>
+			<br/>
+			<ul>
+				<li>Embarazo y parto</li>
+				<li>Cirugía ginecológica</li>
+				<li>Climaterio</li>
+				<li>Ginecología infanto-juvenil</li>
+				<li>Oncología ginecológica</li>
+				<li>Infertilidad</li>
+			</ul>
+			<br/>
+			<strong>Profesionales</strong>
+			<ul>
+				<% @doctors.each do |doctor| %>
+					<li>Dr. <%=doctor.name+' '+doctor.last_name%></li>				
+				<% end %>
+			</ul>
+			<br/>
+			<p>
+			  <button class="btn btn-info" type="button">Agendar hora</button>
+			</p>
 
-<p>
-  <b>Address:</b>
-  <%= @clinic.address %>
-</p>
-
-<p>
-  <b>Phone:</b>
-  <%= @clinic.phone %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%= @clinic.city %>
-</p>
+		</div>
+	</div>
+	
+</div>
 
 
-<%= link_to 'Edit', edit_clinic_path(@clinic) %> |
-<%= link_to 'Back', clinics_path %>
+
+
