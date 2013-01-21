@@ -7,11 +7,14 @@
 			<div class="span4 offset1">
 				<%= link_to(image_tag("ginecologo.gif", class: "img-rounded", size: "250x250"),clinic)%>
 				<address>
-					<%= link_to clinic.name, clinic%> </br>
-					<%=clinic.address%>
+					<strong><%= link_to clinic.name, clinic%></strong> </br>
+					<%=clinic.city%>
 				</address>
 			</div>
 		<% end%>	
-	</div>	
+	</div>
+	<div class="centerize">
+		<%= link_to "Regístrese!", signup_path, class: "btn btn-large btn-primary btn-signup" %>
+	</div>
 </div>
 

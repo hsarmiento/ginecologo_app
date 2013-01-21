@@ -1,7 +1,10 @@
 Ginecologo::Application.routes.draw do
   resources :clinics
+  resource :patients
+
   root to: 'static_pages#index'
   match '/', to: 'static_pages#index'
+  match '/signup', to: 'patients#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,61 @@
+<%= provide(:title, 'Registro de usuario')%>
+
+
+<div class="container-fluid">
+	<h1>Crea tu cuenta y disfruta de la mejor atención!</h1>
+  <div class="row-fluid">	
+  	<div class="span7 hero-unit">
+	  	<%= form_for(@patient, html: {class:"form-horizontal"}) do |f| %>
+	      <%= render 'shared/error_messages', object: f.object %>
+	      	<div class="control-group">
+		      	<%= f.label :name, "Nombre", class: "control-label" %>
+		      	<div class="controls">
+		      		<%= f.text_field :name %>
+		  		</div>
+	      	</div>
+	      	<div class="control-group">
+		      	<%= f.label :last_name, "Apellido", class: "control-label"  %>
+		      	<div class="controls">
+		      		<%= f.text_field :last_name%>
+		      	</div>
+	  	  	</div>
+	  	  	<div class="control-group">
+			  	<%= f.label :date_of_birth, "Fecha de Nacimiento", class: "control-label"%>
+			  	<div class="controls">
+			  	   <%= f.date_select :date_of_birth, use_month_numbers: true, prompt: {day: 'Seleccione dia', month: 'Seleccione mes', year: 'Seleccione año' }, order: [:day, :month, :year], start_year: Time.now.year, end_year: Time.now.year-80 %>
+			  	</div>
+	  	  	</div>
+	  	  	<div class="control-group">
+	  	  	   	<%= f.label :phone, "Telefono", class: "control-label" %>
+	  	  	   	<div class="controls">
+	  	  	   	 	<%= f.text_field :phone %>
+	  	  	   	</div>
+	  		</div>
+	   	  	<div class="control-group">
+	  	  	   	<%= f.label :email, "Email", class: "control-label"%>
+	  	   		<div class="controls">
+	  	   	      	<%= f.text_field :email %>
+	  	  	   	</div>
+	  	  	</div>
+	  	   	<div class="control-group">
+	  	  	   	<%= f.label :password, "Contraseña", class: "control-label" %>
+	  	  	   	<div class="controls">
+	  	   	      <%= f.password_field :password, placeholder: "minimo 6 caracteres"%>
+	  	  	   	</div>
+	  		</div>
+	  		<div class="control-group">
+	  	  	   	<%= f.label :password_confirmation, "Confirme contraseña", class: "control-label" %>
+	  	  	   	<div class="controls">
+	           	<%= f.password_field :password_confirmation, placeholder: "repita su contraseña" %>
+	  	  	   	</div>
+	  		</div>
+	  		<div class="centerize">
+	      	<%= f.submit "Registrar", class: "btn btn-large btn-primary" %>
+	      	</div>     
+	    <% end %>
+  	</div>
+  	<div class="span5 hero-unit">
+  		<h6>Si ya tienes cuenta, ingresa tus datos</h6>
+  	</div>
+  </div>
+</div>
