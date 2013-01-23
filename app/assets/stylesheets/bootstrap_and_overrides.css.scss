@@ -3,6 +3,7 @@
 
 body { padding-top: 60px; }
 
+
 .navbar {
   .navbar-inner {
     background: #a90329; /* Old browsers */
@@ -67,11 +68,22 @@ h2 {
   }
 }
 
+
+/* forms */
 .btn-signup{
   text-align: center;
   padding: 9px 30px;
   font-size: 20px;
 }
+
+input, textarea, select, .uneditable-input {  
+  border: 1px solid #bbb;
+  width: 80%;
+  margin-bottom: 15px;
+}
+
+
+/* misc */
 
 .centerize{
   text-align:center;

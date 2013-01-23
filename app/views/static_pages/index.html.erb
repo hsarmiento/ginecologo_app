@@ -13,8 +13,10 @@
 			</div>
 		<% end%>	
 	</div>
-	<div class="centerize">
-		<%= link_to "Regístrese!", signup_path, class: "btn btn-large btn-primary btn-signup" %>
-	</div>
+	<% if !signed_in? %>
+		<div class="centerize">
+			<%= link_to "Regístrese!", signup_path, class: "btn btn-large btn-primary btn-signup" %>
+		</div>
+	<%end %>
 </div>
 

@@ -56,6 +56,16 @@
   	</div>
   	<div class="span5 hero-unit">
   		<h6>Si ya tienes cuenta, ingresa tus datos</h6>
+  		<%= form_for(:session, url: sessions_path) do |f| %>
+			<%= f.label :email, 'Email' %>
+			<%= f.text_field :email %>
+
+			<%= f.label :password, "Contraseña"%>
+			<%= f.password_field :password %>
+
+			<%= f.submit "Entrar", class: "btn btn-large btn-primary" %>
+
+		<% end %>
   	</div>
   </div>
 </div>

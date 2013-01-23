@@ -6,7 +6,12 @@
 						<li><%= link_to "Inicio", root_path%></li>
 						<li><%= link_to "Servicio", "#"%></li>
 						<li><%= link_to "Quienes somos", "#"%></li>
-						<li><%= link_to "Ingresar", signup_path%></li>
+						<% if signed_in? %>
+							<li><%= link_to "Mis datos", patient_path(current_patient)%></li>
+							<li><%= link_to "Salir", logout_path, method: "delete"%></li>
+						<% else %>
+							<li><%= link_to "Ingresar", signup_path%></li>
+						<% end %>
 				</ul>
 			<nav>
 		</div>
