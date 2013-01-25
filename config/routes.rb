@@ -2,6 +2,27 @@ Ginecologo::Application.routes.draw do
   resources :clinics
   resources :patients
   resources :sessions, only: [:new, :create, :destroy]
+  resources :doctors
+
+  resources :clinics do
+    resources :doctors do
+    end
+  end
+
+  resources :doctors do
+    resources :reserves
+  end
+
+  # map.resources :clinics do |clinics|
+  #   clinics.resources :doctors do |doctors|
+  #       doctors.resources :reserves 
+  #   end
+  # end
+
+
+  # map.resources :clinics do |clinics|
+  #   clinics.resources :doctors, name_prefix: "clinics_"
+  # end
 
   root to: 'static_pages#index'
   match '/', to: 'static_pages#index'

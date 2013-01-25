@@ -5,7 +5,7 @@
 	<div class="row">
 		<% @clinics.each do |clinic| %>
 			<div class="span4 offset1">
-				<%= link_to(image_tag("ginecologo.gif", class: "img-rounded", size: "250x250"),clinic)%>
+				<%= link_to(image_tag("ginecologo.gif", class: "img-rounded", size: "250x250"),clinic_path(clinic.id))%>
 				<address>
 					<strong><%= link_to clinic.name, clinic%></strong> </br>
 					<%=clinic.city%>

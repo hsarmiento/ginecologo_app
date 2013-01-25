@@ -22,17 +22,11 @@
 			<strong>Profesionales</strong>
 			<ul>
 				<% @doctors.each do |doctor| %>
-					<li>Dr. <%=doctor.name+' '+doctor.last_name%></li>				
+					<li><%= link_to 'Dr. '+ doctor.name + ' '+ doctor.last_name, clinic_doctor_path(@clinic.id,doctor.id)%><%= link_to 'Ver horas e informacion', clinic_doctor_path(@clinic.id,doctor.id), class: 'show-info'%>				
 				<% end %>
 			</ul>
-			<br/>
-			<p>
-			  <button class="btn btn-info" type="button">Agendar hora</button>
-			</p>
-
 		</div>
 	</div>
-	
 </div>
 
 

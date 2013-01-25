@@ -1,0 +1,21 @@
+<% provide(:title, @clinic.name) %>
+
+<div class="center hero-unit">
+	<div class="row row-clinic">
+		<div class="span4">
+			<%= image_tag("doctor.jpg", class: "img-rounded", size: "250x250") %>
+		</div>
+		<div class="span6">
+			<h3><%= 'Dr. ' + @doctor.name + ' '+ @doctor.last_name %></h3>
+			<p>
+				Médico español. Después de doctorarse en Barcelona, se formó como cirujano y ginecólogo con Salvador Cardenal en el hospital del Sagrado Corazón. En 1893 ingresó como cirujano en el Hospital de los Niños Pobres de Barcelona, y en 1901 publicó un Tratado de Cirugía de la infancia. En 1902 obtuvo por oposición la cátedra de ginecología y obstetricia de Madrid, que regentó hasta su muerte.
+			</p>
+
+			<p>
+				Intervencionista declarado durante sus primeros años de ejercicio profesional, a partir de 1914 comenzó una intensa campaña en favor de la utilización de la radioterapia en ginecología, partiendo de que "curar no es mutilar, sino conservar los órganos enfermos restituyéndolos a la normalidad perdida". Esta campaña dio lugar a que entablase violentas polémicas con un grupo de cirujanos encabezados por Ángel Pulido.
+			</p>
+
+			<%= link_to 'Agendar hora', new_doctor_reserf_path(@doctor.id), class: "btn btn-info primary show-schedule" %>
+		</div>
+	</div>
+</div>
